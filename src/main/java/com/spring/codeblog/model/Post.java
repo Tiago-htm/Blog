@@ -53,6 +53,8 @@ public class Post {
         this.texto = texto;
     }
 
+    public Post(){}
+
  
 
 }
