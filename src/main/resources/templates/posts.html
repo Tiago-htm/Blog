@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="https://thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,9 +24,14 @@
               </nav>    
             
 
-        <div class="card shadow-sm bg-white rounded" style="margin-top: 20px;">/
+        <div class="card shadow-sm bg-white rounded" style="margin-top: 20px;" th:each="post : ${posts}">/
             <div class="card-body">
-              Teste
+                <p class=" card-subtiitle mb-2 text-muted " style="font-size: 0.8rem;">
+                      <span th:text="${post.autor}"></span>
+                      <span th:text="${post.data}"></span>
+                </p>
+                <a th:href="${(#mvc.url('CC#getPostDetails').arg(0, post.id)).build()}"><h4 class="card-title" style="font-weight: bold; color: black; padding-top: 5px;" > <span th:text="${post.titulo}"></span></h4></a>
+                <p class="card-text"> <span th:utext="${#strings.abbreviate(post.texto,4000)}"></span></p>
             </div>
           </div>
         </div>
