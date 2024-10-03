@@ -28,7 +28,7 @@ public class DumyData {
         post1.setTitulo("Docker");
         post1.setTexto("Texto de exemplo para o post sobre Docker...");
 
-        Post post2 = new Post();    
+        Post post2 = new Post();        
         post2.setAutor("Tiago");
         post2.setData(LocalDate.now());
         post2.setTitulo("Java");
